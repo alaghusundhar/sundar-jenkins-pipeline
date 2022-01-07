@@ -3,7 +3,7 @@ import static com.kubernetes.Constants.GITHUB_TOOLS_PROD_CONFIG_TOKEN_CREDENTIAL
 
 void call(body) {
     Map config = [
-        pieplines: ''
+        testing: ''
     ]
     pipeline { 
     agent any
