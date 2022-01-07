@@ -6,6 +6,7 @@ void call(body){
         pipelines: ''
     ]
     pipeline {
+        agent any
         stages {
             stage {
                 steps {
