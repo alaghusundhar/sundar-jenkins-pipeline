@@ -9,10 +9,8 @@ void call(body){
         agent any
         stages {
             stage ("Checkout Code") {
-                steps {
-                    script {
-                        checkoutGitRepo(repositoryName: 'hello-kubernetes-prod-config', credentialName: GITHUB_TOOLS_CREDENTIAL_NAME, buildDirectoryName: 'hello-kubernetes-prod-config')
-                    }
+                script {
+                    checkoutGitRepo(repositoryName: 'hello-kubernetes-prod-config', credentialName: GITHUB_TOOLS_CREDENTIAL_NAME, buildDirectoryName: 'hello-kubernetes-prod-config')
                 }
             }
         }
