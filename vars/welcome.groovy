@@ -3,16 +3,14 @@ import static com.kubernetes.Constants.GITHUB_TOOLS_PROD_CONFIG_TOKEN_CREDENTIAL
 
 void call(body) {
     Map config = [
-        pieplines: ''
+        sample: ''
     ]
     pipeline { 
-    agent any
+        agent any
         stages {
             stage ("Checkout Code"){
                 steps {
-                    script {
-                        checkoutGitRepo(repositoryName: 'hello-kubernetes-prod-config', credentialName: GITHUB_TOOLS_CREDENTIAL_NAME, buildDirectoryName: 'hello-kubernetes-prod-config')
-                    }
+                    checkoutGitRepo(repositoryName: 'hello-kubernetes-prod-config', credentialName: GITHUB_TOOLS_CREDENTIAL_NAME, buildDirectoryName: 'hello-kubernetes-prod-config')
                 }
             }
         }
