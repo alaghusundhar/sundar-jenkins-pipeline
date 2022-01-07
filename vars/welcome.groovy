@@ -7,22 +7,11 @@ void call(body){
     ]
     pipeline {
         stage ('Checkout Code') {
-            parallel {
-                stage('Checkout Production Configuration Repository') {
-                    steps {
-                        script {
-                            checkoutGitRepo(repositoryName: 'hello-kubernetes-prod-config', credentialName: GITHUB_TOOLS_CREDENTIAL_NAME, buildDirectoryName: 'hello-kubernetes-prod-config')
-                        }
-                    }
+            steps {
+                script {
+                    checkoutGitRepo(repositoryName: 'hello-kubernetes-prod-config', credentialName: GITHUB_TOOLS_CREDENTIAL_NAME, buildDirectoryName: 'hello-kubernetes-prod-config')
                 }
-                stage ('Checkout Development Configuration Repository') {
-                    steps {
-                        script {
-                            checkoutGitRepo(repositoryName: 'hello-kubernetes-dev-config', credentialName: GITHUB_TOOLS_CREDENTIAL_NAME, buildDirectoryName: 'hello-kubernetes-dev-config')
-                        }
-                    }
-                }
-            }    
+            }
         }
     }
 }
