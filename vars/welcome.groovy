@@ -6,10 +6,12 @@ void call(body){
         pipelines: ''
     ]
     pipeline {
-        stage ('Checkout Code') {
-            steps {
-                script {
-                    checkoutGitRepo(repositoryName: 'hello-kubernetes-prod-config', credentialName: GITHUB_TOOLS_CREDENTIAL_NAME, buildDirectoryName: 'hello-kubernetes-prod-config')
+        stages {
+            stage {
+                steps {
+                    script {
+                        checkoutGitRepo(repositoryName: 'hello-kubernetes-prod-config', credentialName: GITHUB_TOOLS_CREDENTIAL_NAME, buildDirectoryName: 'hello-kubernetes-prod-config')
+                    }
                 }
             }
         }
