@@ -8,7 +8,7 @@ void call(body){
     pipeline {
         agent any
         stages {
-            stage {
+            stage ("Checkout Code") {
                 steps {
                     script {
                         checkoutGitRepo(repositoryName: 'hello-kubernetes-prod-config', credentialName: GITHUB_TOOLS_CREDENTIAL_NAME, buildDirectoryName: 'hello-kubernetes-prod-config')
