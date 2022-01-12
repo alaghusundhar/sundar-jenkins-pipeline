@@ -34,7 +34,7 @@ void call(body) {
                     script {
                         createBranch {
                             branchName = strBranchName
-                            repositoryName = getRepositoryInfo(strServiceName: strServiceName)
+                            repositoryName = getRepositoryInfo(serviceName: strServiceName)
                         }
                     }
                     
