@@ -27,5 +27,5 @@ void createReleaseBranch(String branchName) {
     echo "Branch ${branchName} does not exists already hence creating new branch"
     sh script: 'git checkout', label: 'Git Checkout'
     sh script: "git checkout -b ${branchName}", label: 'Create Branch'
-    sh script: "git rebase origin/master"
+    sh script: "git rebase origin/main"
 }
