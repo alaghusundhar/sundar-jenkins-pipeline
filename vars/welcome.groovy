@@ -5,6 +5,10 @@ void call(body) {
     Map config = [
         sample: ''
     ]
+    body.resolveStrategy = Closure.DELEGATE_FIRST
+    body.delegate = config
+    body()
+
     String strBranchName = ''
     String strRepositoryName =''
     String strServiceName =''
@@ -16,6 +20,7 @@ void call(body) {
                     script {
                         strBranchName = generateBranch()
                         strServiceName = "${SVC_NAME}"
+                        echo "Service Name is ${SVC_NAME}"
                     }
                 }
             }
