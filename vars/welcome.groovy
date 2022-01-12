@@ -12,7 +12,10 @@ void call(body) {
         agent any
         stages {
             stage ("Set Local Parameters") {
-                strBranchName = 
+                steps {
+                    strBranchName = generateBranch()
+                    strServiceName = "${SVC_NAME}"
+                }
             }
             stage ("Checkout Code"){
                 steps {
