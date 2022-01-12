@@ -13,8 +13,10 @@ void call(body) {
         stages {
             stage ("Set Local Parameters") {
                 steps {
-                    strBranchName = generateBranch()
-                    strServiceName = "${SVC_NAME}"
+                    script {
+                        strBranchName = generateBranch()
+                        strServiceName = "${SVC_NAME}"
+                    }
                 }
             }
             stage ("Checkout Code"){
@@ -24,10 +26,13 @@ void call(body) {
             }
             stage ("Create Branch") {
                 steps {
-                    createBranch {
-                        branchName = strBranchName
-                        repositoryName = getRepositoryInfo(strServiceName: strServiceName)
+                    script {
+                        createBranch {
+                            branchName = strBranchName
+                            repositoryName = getRepositoryInfo(strServiceName: strServiceName)
+                        }
                     }
+                    
                 }
             }
         }
