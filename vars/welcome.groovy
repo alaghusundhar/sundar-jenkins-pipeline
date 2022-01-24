@@ -12,6 +12,7 @@ void call(body) {
     String strBranchName = ''
     String strRepositoryName =''
     String strServiceName =''
+    String strDataCenters =''
     pipeline { 
         agent any
         stages {
@@ -20,7 +21,9 @@ void call(body) {
                     script {
                         strBranchName = generateBranch()
                         strServiceName = "${SVC_NAME}"
-                        echo "Service Name is ${SVC_NAME}"
+                        strDataCenters = "${DATACENTERS}"
+                        strEnvironmentName = "${ENV_NAME}"
+                        strReleaseTagName = "${RELEASE_TAG}"
                     }
                 }
             }
@@ -38,6 +41,19 @@ void call(body) {
                         }
                     }
                     
+                }
+            }
+            stage ("Deployment New Image") {
+                steps {
+                    script {
+                        releaseDeployment {
+                            branchName = strBranchName
+                            dataCenters = strDataCenters
+                            repositoryName = getRepositoryInfo(serviceName: strServiceName)
+                            environmentNames = strEnvironmentName
+                            releaseTagName = strReleaseTagName
+                        }
+                    }
                 }
             }
         }
