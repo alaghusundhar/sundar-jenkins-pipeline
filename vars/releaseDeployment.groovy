@@ -12,9 +12,6 @@ void call (body) {
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
-    echo "Branch Name: ${config.branchName}"
-    echo "Repository Name: ${config.repositoryName}"
-    echo "Release Tag Name: ${config.releaseDeployment}"
     writeInner(config)
 }
 
