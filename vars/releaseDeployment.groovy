@@ -12,9 +12,9 @@ void call (body) {
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
-    print("Branch Name:",config.branchName)
-    print("Repository Name:", config.repositoryName)
-    print("Release Tag Name:", config.releaseDeployment)
+    echo "Branch Name: ${config.branchName}"
+    echo "Repository Name: ${config.repositoryName}"
+    echo "Release Tag Name: ${config.releaseDeployment}"
     writeInner(config)
 }
 
