@@ -4,7 +4,7 @@ List call (Map parameters = [:]) {
 
     List files = []
     echo "dataCentersList: ${parameters.dataCenters}"
-    echo "environmentNamesList: ${parameters.environmentNames.}"
+    echo "environmentNamesList: ${parameters.environmentNames}"
     echo "extensionList: ${parameters.extensions}"
     List dataCentersList = parameters.dataCenters.split(',')
     List environmentNamesList = parameters.environmentNames.split(',')
