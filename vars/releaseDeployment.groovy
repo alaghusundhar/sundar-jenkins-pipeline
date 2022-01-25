@@ -10,6 +10,7 @@ void call (body) {
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
+    writeInner(config)
 }
 
 void writeInner(Map config) {
