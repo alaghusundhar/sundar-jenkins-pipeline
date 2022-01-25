@@ -1,4 +1,6 @@
+import groovy.transform.Field
 
+@Field String stepName = getClass().name
 
 void call (body) {
     Map config = [
