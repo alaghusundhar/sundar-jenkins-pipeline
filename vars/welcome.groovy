@@ -13,6 +13,9 @@ void call(body) {
     String strRepositoryName =''
     String strServiceName =''
     String strDataCenters =''
+    String strEnvironmentName = ''
+    String strReleaseTagName = ''
+    
     pipeline { 
         agent any
         stages {
