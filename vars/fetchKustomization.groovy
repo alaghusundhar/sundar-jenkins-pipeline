@@ -10,7 +10,6 @@ List call (Map parameters = [:]) {
     List environmentNamesList = parameters.environmentNames.split(',')
     List extensionList = parameters.extensions.split(',')
 
-    banner.echoBanner('overlayFiles')
     for (datacenter in dataCentersList) {
         for (environmentName in environmentNamesList) {
             for (extension in extensionList) {
