@@ -13,7 +13,7 @@ List call (Map parameters = [:]) {
     for (datacenter in dataCentersList) {
         for (environmentName in environmentNamesList) {
             for (extension in extensionList) {
-                files.addAll(findFiles(glob: "**/${parameters.buildDirectoryname}/${dataCenter}/${environmentName}/${extension}"))
+                files.addAll(findFiles(glob: "**/${parameters.buildDirectoryname}/${dataCenters}/${environmentName}/${extension}"))
             }   
         }
     }
